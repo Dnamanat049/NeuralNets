@@ -10,8 +10,11 @@ The project is similar to the past project FIFAI, however it adds the element of
 
 # Goals:
 Create a model that is more than 50% accurate.
+
 Have the model be able to pinpoint mispriced matchups.
+
 Make a model that can generate winnings.
+
 Create an inuitive interface for the application.
 
 
