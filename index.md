@@ -1,37 +1,17 @@
-## Welcome to GitHub Pages
+## NBAI Project
 
-You can use the [editor on GitHub](https://github.com/Dnamanat049/NeuralNets/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+# Project Description
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Watching an NBA game with others, the first question that usually comes up is "who are you rooting for?". Even if you are not particularly disposed to either of the teams, it is easy to pick one and become enamored with the game to the point where you are genuinely sad or upset if "your" team loses. While not always safe or ethical, many tend to enhance this enjoyment by making small bets among friends. Taken on a larger scale, this small-scale betting has become a phenonemon with companies like DraftKings and FanDuel that enable this behavior on a countrywide scale becoming worth billions of dollars. Given how popular this subculture has become, I believe it would be a fun challenge to create a model that is able to "win" at this game.
 
-### Markdown
+For this project, I would like to create a neural network model that takes information about two NBA teams, the Vegas betting odds for that matchup, and decides whether or not to make a bet on one of the teams. This model would be trained on data that hopefully would include information about indidivual players, the stadium, the coach, and other factors relevant to a team's performance in a game. The model would output a % chance that one of the teams will win, and then (possibly a separate, simpler model) will evaluate whether to make a bet on that team given the over/under on the odds.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+The project is similar to the past project FIFAI, however it adds the element of betting and changes the perspective to NBA teams, where the feasibility of prediction might be entirely different. As a fan of the NBA, a lifelong basketball player, and an utter novice to the world of betting, I believe this would be a fun project to undertake and apply my newfound knowledge of neural networks.
 
-```markdown
-Syntax highlighted code block
+# Goals:
+Create a model that is more than 50% accurate.
+Have the model be able to pinpoint mispriced matchups.
+Make a model that can generate winnings.
+Create an inuitive interface for the application.
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Dnamanat049/NeuralNets/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
