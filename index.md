@@ -10,7 +10,7 @@ The project is similar to the past project FIFAI, however it adds the element of
 
 # Background Paragraph
 
-- Difficult part: factoring in the odds portion of it (the model would determine where there was mispricings)
+One of the most difficult parts of this problem is factoring in the odds portion to find mispriced bets. Unlike other sports prediction algorithms, we are not aiming to simply predict the outcome of the game based on historical data. We are attempting to factor in odds that bookmakers have placed on games into the prediction algorithm to see if bets are worth placing or not. The main goal of a bookie is to make money by expanding their margins to the point where they know they will make money regardless of how many bets are placed on one team or the other. We are first going to have to figure out what the odds are of each team winning and then compare this to what the betting odds are to see which bets have the most hidden value. Doing this would allow users of our algorithm to exploit mispriced bets at a higher rate than normal.
 
 # Transition Paragraph
 
@@ -48,7 +48,21 @@ How diverse is our team?
 
 Our team is diverse in athletic background, gambling knowledge, career interests, life backgrounds, and so much more. In terms of demographics, we recognize that while we are racially and culturally diverse, we are all men and as such are lacking a key component of any truly diverse team. However, we will strive to make a product and interface that is attractive and user-friendly to bettors of all identities.
 
+Is our data valid for its intended use?
 
+We are assuming that our data will be valid for its intended use because it will include results of games as well as what the betting odds were on those games in the first place.
+
+What bias could be in our data?
+
+One of the main biases that could exist in our data would be in the odds themselves. Bookmakers attempt to balance all the bets places on every outcome so as to ensure that they are making profit no matter what the outcome of the game is. This process is know as the vig, or vigorish. Overrounding also takes place, which is the actual percentage over 100% that a book is for a certain event that is taking place. Leading up to certain sporting events, bookmakers will adjust the lines to make bets look more attractive so as to maximize profits. This is where the bias comes in because a teams odds of winning a game are not accurately reflected in the betting odds placed on the game.
+
+How could we minimize bias in our data and model?
+
+One way we could minimize the bias in our data would be to take only the initial odds that were released on an event, not any of the odds that were altered leading up to the start of it, so as to obtain the most accurate betting odds for that event. This way, we know exactly what bookmakers initially thought the odds would be when releasing them to the public.
+
+How should we “audit” our code and data?
+
+The best way to audit our code/data would be to make sure that all of the odds we are using in our model are those that were the first to come out about the event (reflecting the most accurate initial impression of the event from bookmakers) and removing and altered odds from the data. This way we know we are not including any data that could be used to entice various bettors into making unwise bets.
 
 # Goals:
 Create a model that is more than 50% accurate.
