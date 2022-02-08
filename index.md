@@ -1,30 +1,30 @@
-## NBAI Project
+# NBAI Project
 
-# Introductory Paragraph
+## Introductory Paragraph
 
-Watching an NBA game with others, the first question that usually comes up is "who are you rooting for?". Even if you are not particularly disposed to either of the teams, it is easy to pick one and become enamored with the game to the point where you are genuinely sad or upset if "your" team loses. While not always safe or ethical, many tend to enhance this enjoyment by making small bets among friends. Taken on a larger scale, this small-scale betting has become a phenonemon with companies like DraftKings and FanDuel that enable this behavior on a countrywide scale becoming worth billions of dollars. Given how popular this subculture has become, our team believes it would be a fun challenge to create a model that is able to "win" at this game.
+"$10 the Knicks lose." Watching an NBA game with others, questions like this about small-scale betting frequently appear as a means of making the event more entertaining for the group. Even if you are not particularly disposed to either of the teams, it is easy to pick one and become enamored with the game to the point where you are genuinely sad or upset if "your" team loses. While not always safe or ethical, it certainly draws you into the event in a way that few other sports-adjacent activites can. Taken on a larger scale, this small-scale betting has become a phenonemon with companies like DraftKings and FanDuel that enable this behavior on a countrywide scale becoming worth billions of dollars. Given how popular this subculture has become, our team believes it would be a fun challenge to create a model that is able to "win" at this game.
 
 For this project, we would like to create a neural network model that takes information about two NBA teams, the Vegas betting odds for that matchup, and decides whether or not to make a bet on one of the teams. This model will be trained on data that includes information about indidivual players, the stadium, the coach, and other factors relevant to a team's performance in a game. The model would output a % chance that one of the teams will win, and then a separate, simpler model will evaluate whether to make a bet on that team given the over/under on the odds.
 
-# Background Paragraph
+## Background Paragraph
 
 One of the most difficult parts of this problem is factoring in the odds portion to find mispriced bets. Unlike other sports prediction algorithms, we are not aiming to simply predict the outcome of the game based on historical data. We are attempting to factor in odds that bookmakers have placed on games into the prediction algorithm to see if bets are worth placing or not. The main goal of a bookie is to make money by expanding their margins to the point where they know they will make money regardless of how many bets are placed on one team or the other. We are first going to have to figure out what the odds are of each team winning and then compare this to what the betting odds are to see which bets have the most hidden value. Doing this would allow users of our algorithm to exploit mispriced bets at a higher rate than normal.
 
-# Transition Paragraph
+## Transition Paragraph
 
 - Hypothetical shortcomings:
 
-# Details Paragraph
+## Details Paragraph
 
 - Technical: it will be difficult to get the data to fit into our model
 
-# Assessment Paragraph
+## Assessment Paragraph
 
 - Model that is more than 50% accurate in predicting matchups
 - Can pinpoint price mismatches
 - Can generate winnings
 
-# Ethics Sweep
+## Ethics Sweep
 
 ### Should we even be doing this?
 
