@@ -12,7 +12,7 @@ One of the most difficult parts of this problem is factoring in the odds portion
 
 ## Transition Paragraph
 
-- Hypothetical shortcomings:
+In general, this is a very difficult task. For one, sports betting companies have their own data science teams, and use ML algorithms to generate odds. The challenge is to create a model that performs with higher accuracy than the those owned by the betting companies. There are two directions we can take to beat their models: one is to get more accurate or extensive data, the other to develop a model that is more advanced than theirs (as in one that is constructed better). Since we do not know the approaches of sports betting companies, it is difficult to know what their weaknesses are. Therefore, we will plan on accruing/using as much data as we can, and use every tool at our disposal to train our model accurately. 
 
 ## Details Paragraph
 
@@ -61,6 +61,18 @@ One way we could minimize the bias in our data would be to take only the initial
 ### How should we “audit” our code and data?
 
 The best way to audit our code/data would be to make sure that all of the odds we are using in our model are those that were the first to come out about the event (reflecting the most accurate initial impression of the event from bookmakers) and removing and altered odds from the data. This way we know we are not including any data that could be used to entice various bettors into making unwise bets.
+
+### Do we expect different errors rates for different sub-groups in the data?
+
+In this case, it is possible we encounter different error rates for different sub-groups, as a result of imperfect data. Our data will revolve around many factors, including individual player history, team statistics, prior game outcomes, stadiums, etc., and unfortunately, this data is uneven between men and women's sports. As a result, it is likely that error rates will be higher for women's sports betting. This is an unfortunate and frustrating possbility. It illustrates that the betting and sport industry is highly gendered. We will attempt to alleviate these issues by collecting as much data is available for underrepresented groups, however, we acknowledge that this will not neccessarrily ammend the issue. 
+
+### What are likely misinterpretations of the results and what can be done to prevent those misinterpretations?
+
+A possible misinterpretation of the results may be that our generated accuracy predictions are better than betting companies. Another possible misinterpretation is that the accuracies suggest a bet. For instance, if we predict the chances team A wins as 75%, it might be interpreted that someone should take that bet. However, the decision to bet must take into account the difference in predicted chances between our algorithm and the betting company. If we publish this algorithm in any locations, we will prevent this misinterpretation by including descriptions of the algorithm and its intended implementations, as well as disclaimers surrounding its efficacy. 
+
+### How might we impinge individuals' privacy and/or anonymity?
+
+We do not forsee this impinging individuals' privacy or anonymity. Since it will use information provided publicly, which team members consent to, it will not utilize information not previously consented to. 
 
 # Goals:
 Create a model that is more than 50% accurate.
