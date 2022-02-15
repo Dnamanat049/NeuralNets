@@ -38,6 +38,10 @@ This article explains how to decide whether or not you should bet on a given spo
 
 Link: https://www.thesportsgeek.com/sports-betting/strategy/understanding-value/
 
+Other links: 
+https://hughchristensen.com/papers/academic_papers/loeffelholz2009.pdf
+https://www.researchgate.net/publication/312236952_Predicting_the_Outcome_of_NBA_Playoffs_Based_on_the_Maximum_Entropy_Principle
+
 
 ## Ethics Sweep
 
