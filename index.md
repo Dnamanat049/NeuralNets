@@ -1,5 +1,17 @@
 # NBAI Project
 
+## Related Works (by Nick, change to different section later). 
+
+https://towardsdatascience.com/building-my-first-machine-learning-model-nba-prediction-algorithm-dee5c5bc4cc1?gi=ab8c91263c91
+
+Summary: This project used the Python package Selenium to webscrape monthly NBA statistics, then used Scikit-learn's Support Vector Machine algorithm to predict wins and losses. It achieved very high accuracy (72%). Some key takeaways are the use of Selenium, which may be helpful (Beautiful Soup as well), and the use of the Basketball-Reference.com as a location of data. 
+
+https://www.cs.dartmouth.edu/~lorenzo/teaching/cs174/Archive/Winter2013/Projects/FinalReportWriteup/michelle.w.shu/
+
+Summary: This brings up many interesting ideas. While none of the alg's used in the paper were neural nets, nonetheless many achieved some level of accuracy that is good (around 57%). What's maybe more alluring about the article is the analysis of long-term gains from investment using the algorithm, which despite its low accuracy compared to other identified algorithms, still purports to achieve higher gains than the S&P by a lot. m
+
+
+
 ## Introductory Paragraph
 
 "$10 the Knicks lose." Watching an NBA game with others, questions like this about small-scale betting frequently appear as a means of making the event more entertaining for the group. Even if you are not particularly disposed to either of the teams, it is easy to pick one and become enamored with the game to the point where you are genuinely sad or upset if "your" team loses. While not always safe or ethical, it certainly draws you into the event in a way that few other sports-adjacent activites can. Taken on a larger scale, this small-scale betting has become a phenonemon with companies like DraftKings and FanDuel that enable this behavior on a countrywide scale becoming worth billions of dollars. Given how popular this subculture has become, our team believes it would be a fun challenge to create a model that is able to "win" at this game.
@@ -23,25 +35,6 @@ In general, this is a very difficult task. For one, sports betting companies hav
 - Model that is more than 50% accurate in predicting matchups
 - Can pinpoint price mismatches
 - Can generate winnings
-
-## Related Works Search
-
-### Predicting the outcome of NBA games with Machine Learning - Josh Weiner
-
-In this towardsdatascience.com blog post, a group of undergraduate students at the University of Pennsylvania created a random forest model to predict the outcome of NBA games. With similar experience, resources, and time, we thought this project to be particularly relevant to our endeavors in terms of gauging what we might be able to accomplish. This team scraped their data from BasketballReference.com and engineered five features: 1. ELO rating; 2. Average team stats over past 10 games; 3. Average player stats over past 10 games; 4. Player season performance; 5. Player Efficiency Ratings (PER). Upon analysis of the features, they decided to train the mdoel on ELO ratings and recent average team stats. The model they generated ended up performing with a test accuracy rating of 67.15%, which our group would like to use as a benchmark to surpass.
-
-Link: https://towardsdatascience.com/predicting-the-outcome-of-nba-games-with-machine-learning-a810bb768f20
-
-## Understanding the Critical Importance of Value in Sports Betting - thesportsgeek.com
-
-This article explains how to decide whether or not you should bet on a given sports game, once you have calculated (or guessed!) a percentage likelihood that a team will win. Using the mathematical concept of implied probability, the article explains how to take gambling odds and convert them into a percentage chance that the bookmaker is assuming a given team has to win. If the percentage likelihood that you have calculated on your own is higher than the bookmaker's implied percentage, then you should place a bet and will theoretically make money. If your odds are lower, you should not place the bet (or you should take the other side of the bet!).
-
-Link: https://www.thesportsgeek.com/sports-betting/strategy/understanding-value/
-
-Other links: 
-https://hughchristensen.com/papers/academic_papers/loeffelholz2009.pdf
-https://www.researchgate.net/publication/312236952_Predicting_the_Outcome_of_NBA_Playoffs_Based_on_the_Maximum_Entropy_Principle
-
 
 ## Ethics Sweep
 
@@ -101,4 +94,5 @@ Have the model be able to pinpoint mispriced matchups.
 Make a model that can generate winnings.
 
 Create an inuitive interface for the application.
+
 
