@@ -112,6 +112,10 @@ Summary: These researchers used back-propagation and conjugate-gradient methods 
  This article explains how to decide whether or not you should bet on a given sports game, once you have calculated (or guessed!) a percentage likelihood that a team will win. Using the mathematical concept of implied probability, the article explains how to take gambling odds and convert them into a percentage chance that the bookmaker is assuming a given team has to win. If the percentage likelihood that you have calculated on your own is higher than the bookmaker's implied percentage, then you should place a bet and will theoretically make money. If your odds are lower, you should not place the bet (or you should take the other side of the bet!).
 
  Link: https://www.thesportsgeek.com/sports-betting/strategy/understanding-value/
+ 
+ Other links: 
+ https://hughchristensen.com/papers/academic_papers/loeffelholz2009.pdf
+ https://www.researchgate.net/publication/312236952_Predicting_the_Outcome_of_NBA_Playoffs_Based_on_the_Maximum_Entropy_Principle
 
 
 
