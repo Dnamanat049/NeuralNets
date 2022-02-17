@@ -1,17 +1,5 @@
 # NBAI Project
 
-## Related Works (by Nick, change to different section later). 
-
-https://towardsdatascience.com/building-my-first-machine-learning-model-nba-prediction-algorithm-dee5c5bc4cc1?gi=ab8c91263c91
-
-Summary: This project used the Python package Selenium to webscrape monthly NBA statistics, then used Scikit-learn's Support Vector Machine algorithm to predict wins and losses. It achieved very high accuracy (72%). Some key takeaways are the use of Selenium, which may be helpful (Beautiful Soup as well), and the use of the Basketball-Reference.com as a location of data. 
-
-https://www.cs.dartmouth.edu/~lorenzo/teaching/cs174/Archive/Winter2013/Projects/FinalReportWriteup/michelle.w.shu/
-
-Summary: This brings up many interesting ideas. While none of the alg's used in the paper were neural nets, nonetheless many achieved some level of accuracy that is good (around 57%). What's maybe more alluring about the article is the analysis of long-term gains from investment using the algorithm, which despite its low accuracy compared to other identified algorithms, still purports to achieve higher gains than the S&P by a lot. m
-
-
-
 ## Introductory Paragraph
 
 "$10 the Knicks lose." Watching an NBA game with others, questions like this about small-scale betting frequently appear as a means of making the event more entertaining for the group. Even if you are not particularly disposed to either of the teams, it is easy to pick one and become enamored with the game to the point where you are genuinely sad or upset if "your" team loses. While not always safe or ethical, it certainly draws you into the event in a way that few other sports-adjacent activites can. Taken on a larger scale, this small-scale betting has become a phenonemon with companies like DraftKings and FanDuel that enable this behavior on a countrywide scale becoming worth billions of dollars. Given how popular this subculture has become, our team believes it would be a fun challenge to create a model that is able to "win" at this game.
@@ -94,5 +82,24 @@ Have the model be able to pinpoint mispriced matchups.
 Make a model that can generate winnings.
 
 Create an inuitive interface for the application.
+
+## Related Works (by Nick, change to different section later). 
+
+https://towardsdatascience.com/building-my-first-machine-learning-model-nba-prediction-algorithm-dee5c5bc4cc1?gi=ab8c91263c91
+
+Summary: This project used the Python package Selenium to webscrape monthly NBA statistics, then used Scikit-learn's Support Vector Machine algorithm to predict wins and losses. It achieved very high accuracy (72%). Some key takeaways are the use of Selenium, which may be helpful (Beautiful Soup as well), and the use of the Basketball-Reference.com as a location of data. 
+
+https://www.cs.dartmouth.edu/~lorenzo/teaching/cs174/Archive/Winter2013/Projects/FinalReportWriteup/michelle.w.shu/
+
+Summary: This brings up many interesting ideas. While none of the algorithms used in the paper were neural nets, nonetheless many achieved some level of accuracy that is good (around 57%). What's maybe more alluring about the article is the analysis of long-term gains from investment using the algorithm, which despite its low accuracy compared to other identified algorithms, still purports to achieve higher gains than the S&P by a lot. m
+
+https://www.degruyter.com/document/doi/10.2202/1559-0410.1156/html
+
+Summary: This particular research from the Air Force Institute of Technology used 4 different types of neural networks to predict NBA outcomes, feed-forward neural nets, radial base functions, probabilistic neural nets, and Bayesian belief networks. The researches aimed to predict win outcomes of NBA games. The best functioning neural network was by use of fusion (combining several classifiers together), with a 74.33% accuracy compared to the 68.67% accuracy of betting experts. The database consisted of box scores from the 2007-8 season, including 620 games in the training set. What's promising is that we hope to use many more games and data as input. 
+
+https://ieeexplore.ieee.org/abstract/document/4492661
+
+Summary: These researchers used back-propagation and conjugate-gradient methods on data including (but not limited to) game location, players present, team ranking, performance in previous games, total points scored so far in the season for and against. They actually trained the algorithms on four different sports, including Australian rugby, football, Super Rugby, and English football. Their results, while beggining with low accuracy, improved quickly. Prediction of results in the 2007 Super 14 season reached about 68%, exceeding professional expert prediction. The algorithm was also entered into the "TopTipper" competition in the same year, and ended the season as the best predictor entered. 
+
 
 
