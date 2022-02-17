@@ -101,5 +101,17 @@ https://ieeexplore.ieee.org/abstract/document/4492661
 
 Summary: These researchers used back-propagation and conjugate-gradient methods on data including (but not limited to) game location, players present, team ranking, performance in previous games, total points scored so far in the season for and against. They actually trained the algorithms on four different sports, including Australian rugby, football, Super Rugby, and English football. Their results, while beggining with low accuracy, improved quickly. Prediction of results in the 2007 Super 14 season reached about 68%, exceeding professional expert prediction. The algorithm was also entered into the "TopTipper" competition in the same year, and ended the season as the best predictor entered. 
 
+### Predicting the outcome of NBA games with Machine Learning - Josh Weiner
+
+ In this towardsdatascience.com blog post, a group of undergraduate students at the University of Pennsylvania created a random forest model to predict the outcome of NBA games. With similar experience, resources, and time, we thought this project to be particularly relevant to our endeavors in terms of gauging what we might be able to accomplish. This team scraped their data from BasketballReference.com and engineered five features: 1. ELO rating; 2. Average team stats over past 10 games; 3. Average player stats over past 10 games; 4. Player season performance; 5. Player Efficiency Ratings (PER). Upon analysis of the features, they decided to train the mdoel on ELO ratings and recent average team stats. The model they generated ended up performing with a test accuracy rating of 67.15%, which our group would like to use as a benchmark to surpass.
+
+ Link: https://towardsdatascience.com/predicting-the-outcome-of-nba-games-with-machine-learning-a810bb768f20
+
+ ## Understanding the Critical Importance of Value in Sports Betting - thesportsgeek.com
+
+ This article explains how to decide whether or not you should bet on a given sports game, once you have calculated (or guessed!) a percentage likelihood that a team will win. Using the mathematical concept of implied probability, the article explains how to take gambling odds and convert them into a percentage chance that the bookmaker is assuming a given team has to win. If the percentage likelihood that you have calculated on your own is higher than the bookmaker's implied percentage, then you should place a bet and will theoretically make money. If your odds are lower, you should not place the bet (or you should take the other side of the bet!).
+
+ Link: https://www.thesportsgeek.com/sports-betting/strategy/understanding-value/
+
 
 
