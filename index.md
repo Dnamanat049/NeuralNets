@@ -107,7 +107,7 @@ Summary: These researchers used back-propagation and conjugate-gradient methods 
 
  Link: https://towardsdatascience.com/predicting-the-outcome-of-nba-games-with-machine-learning-a810bb768f20
 
- ## Understanding the Critical Importance of Value in Sports Betting - thesportsgeek.com
+ ### Understanding the Critical Importance of Value in Sports Betting - thesportsgeek.com
 
  This article explains how to decide whether or not you should bet on a given sports game, once you have calculated (or guessed!) a percentage likelihood that a team will win. Using the mathematical concept of implied probability, the article explains how to take gambling odds and convert them into a percentage chance that the bookmaker is assuming a given team has to win. If the percentage likelihood that you have calculated on your own is higher than the bookmaker's implied percentage, then you should place a bet and will theoretically make money. If your odds are lower, you should not place the bet (or you should take the other side of the bet!).
 
