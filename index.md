@@ -83,7 +83,7 @@ Make a model that can generate winnings.
 
 Create an inuitive interface for the application.
 
-## Related Works (by Nick, change to different section later). 
+## Related Works
 
 https://towardsdatascience.com/building-my-first-machine-learning-model-nba-prediction-algorithm-dee5c5bc4cc1?gi=ab8c91263c91
 
