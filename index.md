@@ -113,6 +113,10 @@ Summary: These researchers used back-propagation and conjugate-gradient methods 
 
  Link: https://www.thesportsgeek.com/sports-betting/strategy/understanding-value/
  
+ ## Dataset(s)
+ 
+ There are currently two datasets that we are deciding between using for our model.
+ 
  ### Dataset #1
  
   The first dataset we found that could possibly be used for our model is one that includes NBA data from the regular season and playoff games as well as odds for the past decade. This data has been scraped from various sources on the internet.
