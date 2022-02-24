@@ -113,6 +113,18 @@ Summary: These researchers used back-propagation and conjugate-gradient methods 
 
  Link: https://www.thesportsgeek.com/sports-betting/strategy/understanding-value/
  
+ ### Dataset #1
+ 
+  The first dataset we found that could possibly be used for our model is one that includes NBA data from the regular season and playoff games as well as odds for the past decade. This data has been scraped from various sources on the internet.
+  
+  Link: https://www.kaggle.com/erichqiu/nba-odds-and-scores?select=2018-19
+  
+ ### Dataset #2
+ 
+  The second dataset we found that could be used for our model is very similar to the first dataset in the sense that it also includes results from several years of regular season and playoff results from the NBA. It also includes the betting data in various formats, such as money line and spread as well as the betting totals in for the various books in the dataset.
+  
+  Link: https://www.kaggle.com/ehallmar/nba-historical-stats-and-betting-data?select=nba_betting_totals.csv
+ 
  Other links: 
  https://hughchristensen.com/papers/academic_papers/loeffelholz2009.pdf
  https://www.researchgate.net/publication/312236952_Predicting_the_Outcome_of_NBA_Playoffs_Based_on_the_Maximum_Entropy_Principle
