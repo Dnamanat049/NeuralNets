@@ -1,22 +1,21 @@
 # NBAI Project
 
-## Introductory Paragraph
+## INTRODUCTION
 
-"$10 the Knicks lose." Watching an NBA game with others, questions like this about small-scale betting frequently appear as a means of making the event more entertaining for the group. Even if you are not particularly disposed to either of the teams, it is easy to pick one and become enamored with the game to the point where you are genuinely sad or upset if "your" team loses. While not always safe or ethical, it certainly draws you into the event in a way that few other sports-adjacent activites can. Taken on a larger scale, this small-scale betting has become a phenonemon with companies like DraftKings and FanDuel that enable this behavior on a countrywide scale becoming worth billions of dollars. Given how popular this subculture has become, our team believes it would be a fun challenge to create a model that is able to "win" at this game.
+"$10 the Knicks lose." Watching an NBA game with others, questions like this about small-scale betting frequently appear as a means of making the event more entertaining for the group. Even if you are not particularly disposed to either of the teams, it is easy to pick one and become enamored with the game to the point where you are genuinely sad or upset if "your" team loses. While not always safe or ethical, it certainly draws you into the event in a way that few other sports-adjacent activites can. Taken on a larger scale, this small-scale betting has become a phenonemon with companies like DraftKings and FanDuel that enable this behavior on a countrywide scale becoming worth billions of dollars. Given how popular this subculture has become, our team believes it would be a fun challenge to create a model that is able to win at this "game."
 
 For this project, we would like to create a neural network model that takes information about two NBA teams, the Vegas betting odds for that matchup, and decides whether or not to make a bet on one of the teams. This model will be trained on data that includes information about indidivual players, the stadium, the coach, and other factors relevant to a team's performance in a game. The model would output a % chance that one of the teams will win, and then a separate, simpler model will evaluate whether to make a bet on that team given the over/under on the odds.
 
-## Background Paragraph
-
 One of the most difficult parts of this problem is factoring in the odds portion to find mispriced bets. Unlike other sports prediction algorithms, we are not aiming to simply predict the outcome of the game based on historical data. We are attempting to factor in odds that bookmakers have placed on games into the prediction algorithm to see if bets are worth placing or not. The main goal of a bookie is to make money by expanding their margins to the point where they know they will make money regardless of how many bets are placed on one team or the other. We are first going to have to figure out what the odds are of each team winning and then compare this to what the betting odds are to see which bets have the most hidden value. Doing this would allow users of our algorithm to exploit mispriced bets at a higher rate than normal.
 
-## Transition Paragraph
+From a top-down view, this is a very difficult task. For one, sports betting companies have their own data science teams, and use ML algorithms to generate odds. The challenge is to create a model that performs with higher accuracy than the those owned by the betting companies. There are two directions we can take to beat their models: one is to get more accurate or extensive data, the other to develop a model that is more advanced than theirs (as in one that is constructed better). Since we do not know the approaches of sports betting companies, it is difficult to know what their weaknesses are. Therefore, we will plan on accruing/using as much data as we can, and use every tool at our disposal to train our model accurately. 
 
-In general, this is a very difficult task. For one, sports betting companies have their own data science teams, and use ML algorithms to generate odds. The challenge is to create a model that performs with higher accuracy than the those owned by the betting companies. There are two directions we can take to beat their models: one is to get more accurate or extensive data, the other to develop a model that is more advanced than theirs (as in one that is constructed better). Since we do not know the approaches of sports betting companies, it is difficult to know what their weaknesses are. Therefore, we will plan on accruing/using as much data as we can, and use every tool at our disposal to train our model accurately. 
-
-## Details Paragraph
-
-- Technical: it will be difficult to get the data to fit into our model
+From a details-oriented view, we will also be facing several challenges. In terms of data, while the gathering process will be fairly straightforward with so many online resources, choosing which statistics and averages to use as inputs will not be so simple. There is potential for noise amongst these troves of data, and so we want to isolate inputs that actually have predictive power. In addition, the values that are important could change from season to season, month to month, or even game to game. Take three pointers, which has become progressively more important to a team's success since they first debuted in 1979 (dramatically so over the past decade). Consider as well injuries, which might make it difficult to rely heavily on individual players' stats given that the makeup of teams has the potential to change from day to day. Apart from data, another challenge we will face is in the form of choosing proper hyperparameters and the right activation function to achieve optimal accuracy. Many past projects
+- Difficult gathering data
+- Choosing what kinds of data to use
+- Incorporating injuries
+- Learning Neural Networks, choosing the best activation function and hyperparameters
+- Ideally would like to test it out during the NBA playoffs upon completion of the project
 
 ## Assessment Paragraph
 
