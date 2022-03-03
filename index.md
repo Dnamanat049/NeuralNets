@@ -21,7 +21,10 @@ From a details-oriented view, we will also be facing several challenges. In term
 
 ## Related Works
 
- The problem of NBA prediction is a topic that has already been extensively explored.
+ The problem of NBA prediction is a topic that has already been extensively explored. In research by the Air Force Institute of Technology, [Loeffelholz, Bednar, and Bauer](https://www.degruyter.com/document/doi/10.2202/1559-0410.1156/html), used 4 different types of neural networks to predict NBA outcomes, feed-forward, radial basis, probabilistic, and generalized regression networks. In addition, a fusion neural network was used that combined the results of the aforementioned networks via a Bayesian belief network and probabilistic neural network fusion. The database consisted of box scores from the 2007-8 season, including 620 games in the training set and 30 in the validation set. The feed-forward neural network performed best, achieving a 74.33% accuracy rating based on just 4 predictors: FG% and FT% for the home and away teams. This incredible result based on just a tiny set of predictors is incredible and gives us high confidence that we will be able to improve on this model.
+ 
+ In perhaps a more relevant project, a [group of undergraduate students](https://towardsdatascience.com/predicting-the-outcome-of-nba-games-with-machine-learning-a810bb768f20) at the University of Pennsylvania created a random forest model to predict the outcome of NBA games. With similar experience, resources, and time, we thought this project to be particularly relevant to our endeavors in terms of gauging what we might be able to accomplish. This team scraped their data from BasketballReference.com and engineered five features: 1. ELO rating; 2. Average team stats over past 10 games; 3. Average player stats over past 10 games; 4. Player season performance; 5. Player Efficiency Ratings (PER). Upon analysis of the features, they decided to train the mdoel on ELO ratings and recent average team stats. The model they generated ended up performing with a test accuracy rating of 67.15%, which our group would like to use as a benchmark to surpass.
+ 
 
 https://towardsdatascience.com/building-my-first-machine-learning-model-nba-prediction-algorithm-dee5c5bc4cc1?gi=ab8c91263c91
 
@@ -31,19 +34,9 @@ https://www.cs.dartmouth.edu/~lorenzo/teaching/cs174/Archive/Winter2013/Projects
 
 Summary: This brings up many interesting ideas. While none of the algorithms used in the paper were neural nets, nonetheless many achieved some level of accuracy that is good (around 57%). What's maybe more alluring about the article is the analysis of long-term gains from investment using the algorithm, which despite its low accuracy compared to other identified algorithms, still purports to achieve higher gains than the S&P by a lot. m
 
-https://www.degruyter.com/document/doi/10.2202/1559-0410.1156/html
-
-Summary: This particular research from the Air Force Institute of Technology used 4 different types of neural networks to predict NBA outcomes, feed-forward neural nets, radial base functions, probabilistic neural nets, and Bayesian belief networks. The researches aimed to predict win outcomes of NBA games. The best functioning neural network was by use of fusion (combining several classifiers together), with a 74.33% accuracy compared to the 68.67% accuracy of betting experts. The database consisted of box scores from the 2007-8 season, including 620 games in the training set. What's promising is that we hope to use many more games and data as input. 
-
 https://ieeexplore.ieee.org/abstract/document/4492661
 
 Summary: These researchers used back-propagation and conjugate-gradient methods on data including (but not limited to) game location, players present, team ranking, performance in previous games, total points scored so far in the season for and against. They actually trained the algorithms on four different sports, including Australian rugby, football, Super Rugby, and English football. Their results, while beggining with low accuracy, improved quickly. Prediction of results in the 2007 Super 14 season reached about 68%, exceeding professional expert prediction. The algorithm was also entered into the "TopTipper" competition in the same year, and ended the season as the best predictor entered. 
-
-### Predicting the outcome of NBA games with Machine Learning - Josh Weiner
-
- In this towardsdatascience.com blog post, a group of undergraduate students at the University of Pennsylvania created a random forest model to predict the outcome of NBA games. With similar experience, resources, and time, we thought this project to be particularly relevant to our endeavors in terms of gauging what we might be able to accomplish. This team scraped their data from BasketballReference.com and engineered five features: 1. ELO rating; 2. Average team stats over past 10 games; 3. Average player stats over past 10 games; 4. Player season performance; 5. Player Efficiency Ratings (PER). Upon analysis of the features, they decided to train the mdoel on ELO ratings and recent average team stats. The model they generated ended up performing with a test accuracy rating of 67.15%, which our group would like to use as a benchmark to surpass.
-
- Link: https://towardsdatascience.com/predicting-the-outcome-of-nba-games-with-machine-learning-a810bb768f20
 
 ### Understanding the Critical Importance of Value in Sports Betting - thesportsgeek.com
 
