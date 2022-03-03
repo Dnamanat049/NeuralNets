@@ -10,18 +10,47 @@ One of the most difficult parts of this problem is factoring in the odds portion
 
 From a top-down view, this is a very difficult task. For one, sports betting companies have their own data science teams, and use ML algorithms to generate odds. The challenge is to create a model that performs with higher accuracy than the those owned by the betting companies. There are two directions we can take to beat their models: one is to get more accurate or extensive data, the other to develop a model that is more advanced than theirs (as in one that is constructed better). Since we do not know the approaches of sports betting companies, it is difficult to know what their weaknesses are. Therefore, we will plan on accruing/using as much data as we can, and use every tool at our disposal to train our model accurately. 
 
-From a details-oriented view, we will also be facing several challenges. In terms of data, while the gathering process will be fairly straightforward with so many online resources, choosing which statistics and averages to use as inputs will not be so simple. There is potential for noise amongst these troves of data, and so we want to isolate inputs that actually have predictive power. In addition, the values that are important could change from season to season, month to month, or even game to game. Take three pointers, which has become progressively more important to a team's success since they first debuted in 1979 (dramatically so over the past decade). Consider as well injuries, which might make it difficult to rely heavily on individual players' stats given that the makeup of teams has the potential to change from day to day. Apart from data, another challenge we will face is in the form of choosing proper hyperparameters and the right activation function to achieve optimal accuracy. Many past projects
-- Difficult gathering data
-- Choosing what kinds of data to use
-- Incorporating injuries
-- Learning Neural Networks, choosing the best activation function and hyperparameters
-- Ideally would like to test it out during the NBA playoffs upon completion of the project
+From a details-oriented view, we will also be facing several challenges. In terms of data, while the gathering process will be fairly straightforward with so many online resources, choosing which statistics and averages to use as inputs will not be so simple. There is potential for noise amongst these troves of data, and so we want to isolate inputs that actually have predictive power. In addition, the values that are important could change from season to season, month to month, or even game to game. Take three pointers, which has become progressively more important to a team's success since they first debuted in 1979 (dramatically so over the past decade). Consider as well injuries, which might make it difficult to rely heavily on individual players' stats given that the makeup of teams has the potential to change from day to day. Apart from data, another challenge we will face is in the form of choosing proper hyperparameters and the right activation function to achieve optimal accuracy. The best past projects have plateaued around the ~75% mark. While this may be the best that is achievable with the data we have due to the randomness of sports, we believe that we can push this upper limit by choosing proper hyperparameters and an activation function that is well-suited for this particular problem. To validate our results, we will set aside a validation set of the data on which to test our model. In the long run, we would ideally like to see how the model performs on games that have yet to been played, given that that is its purpose.
 
 ## Assessment Paragraph
 
 - Model that is more than 50% accurate in predicting matchups
 - Can pinpoint price mismatches
 - Can generate winnings
+- Create an inuitive interface for the application.
+
+## Related Works
+
+ The problem of NBA prediction is a topic that has already been extensively explored.
+
+https://towardsdatascience.com/building-my-first-machine-learning-model-nba-prediction-algorithm-dee5c5bc4cc1?gi=ab8c91263c91
+
+Summary: This project used the Python package Selenium to webscrape monthly NBA statistics, then used Scikit-learn's Support Vector Machine algorithm to predict wins and losses. It achieved very high accuracy (72%). Some key takeaways are the use of Selenium, which may be helpful (Beautiful Soup as well), and the use of the Basketball-Reference.com as a location of data. 
+
+https://www.cs.dartmouth.edu/~lorenzo/teaching/cs174/Archive/Winter2013/Projects/FinalReportWriteup/michelle.w.shu/
+
+Summary: This brings up many interesting ideas. While none of the algorithms used in the paper were neural nets, nonetheless many achieved some level of accuracy that is good (around 57%). What's maybe more alluring about the article is the analysis of long-term gains from investment using the algorithm, which despite its low accuracy compared to other identified algorithms, still purports to achieve higher gains than the S&P by a lot. m
+
+https://www.degruyter.com/document/doi/10.2202/1559-0410.1156/html
+
+Summary: This particular research from the Air Force Institute of Technology used 4 different types of neural networks to predict NBA outcomes, feed-forward neural nets, radial base functions, probabilistic neural nets, and Bayesian belief networks. The researches aimed to predict win outcomes of NBA games. The best functioning neural network was by use of fusion (combining several classifiers together), with a 74.33% accuracy compared to the 68.67% accuracy of betting experts. The database consisted of box scores from the 2007-8 season, including 620 games in the training set. What's promising is that we hope to use many more games and data as input. 
+
+https://ieeexplore.ieee.org/abstract/document/4492661
+
+Summary: These researchers used back-propagation and conjugate-gradient methods on data including (but not limited to) game location, players present, team ranking, performance in previous games, total points scored so far in the season for and against. They actually trained the algorithms on four different sports, including Australian rugby, football, Super Rugby, and English football. Their results, while beggining with low accuracy, improved quickly. Prediction of results in the 2007 Super 14 season reached about 68%, exceeding professional expert prediction. The algorithm was also entered into the "TopTipper" competition in the same year, and ended the season as the best predictor entered. 
+
+### Predicting the outcome of NBA games with Machine Learning - Josh Weiner
+
+ In this towardsdatascience.com blog post, a group of undergraduate students at the University of Pennsylvania created a random forest model to predict the outcome of NBA games. With similar experience, resources, and time, we thought this project to be particularly relevant to our endeavors in terms of gauging what we might be able to accomplish. This team scraped their data from BasketballReference.com and engineered five features: 1. ELO rating; 2. Average team stats over past 10 games; 3. Average player stats over past 10 games; 4. Player season performance; 5. Player Efficiency Ratings (PER). Upon analysis of the features, they decided to train the mdoel on ELO ratings and recent average team stats. The model they generated ended up performing with a test accuracy rating of 67.15%, which our group would like to use as a benchmark to surpass.
+
+ Link: https://towardsdatascience.com/predicting-the-outcome-of-nba-games-with-machine-learning-a810bb768f20
+
+### Understanding the Critical Importance of Value in Sports Betting - thesportsgeek.com
+
+ This article explains how to decide whether or not you should bet on a given sports game, once you have calculated (or guessed!) a percentage likelihood that a team will win. Using the mathematical concept of implied probability, the article explains how to take gambling odds and convert them into a percentage chance that the bookmaker is assuming a given team has to win. If the percentage likelihood that you have calculated on your own is higher than the bookmaker's implied percentage, then you should place a bet and will theoretically make money. If your odds are lower, you should not place the bet (or you should take the other side of the bet!).
+
+ Link: https://www.thesportsgeek.com/sports-betting/strategy/understanding-value/
+ 
 
 ## Ethics Sweep
 
@@ -73,64 +102,35 @@ A possible misinterpretation of the results may be that our generated accuracy p
 
 We do not forsee this impinging individuals' privacy or anonymity. Since it will use information provided publicly, which team members consent to, it will not utilize information not previously consented to. 
 
-# Goals:
-Create a model that is more than 50% accurate.
-
-Have the model be able to pinpoint mispriced matchups.
-
-Make a model that can generate winnings.
-
-Create an inuitive interface for the application.
-
-## Related Works
-
-https://towardsdatascience.com/building-my-first-machine-learning-model-nba-prediction-algorithm-dee5c5bc4cc1?gi=ab8c91263c91
-
-Summary: This project used the Python package Selenium to webscrape monthly NBA statistics, then used Scikit-learn's Support Vector Machine algorithm to predict wins and losses. It achieved very high accuracy (72%). Some key takeaways are the use of Selenium, which may be helpful (Beautiful Soup as well), and the use of the Basketball-Reference.com as a location of data. 
-
-https://www.cs.dartmouth.edu/~lorenzo/teaching/cs174/Archive/Winter2013/Projects/FinalReportWriteup/michelle.w.shu/
-
-Summary: This brings up many interesting ideas. While none of the algorithms used in the paper were neural nets, nonetheless many achieved some level of accuracy that is good (around 57%). What's maybe more alluring about the article is the analysis of long-term gains from investment using the algorithm, which despite its low accuracy compared to other identified algorithms, still purports to achieve higher gains than the S&P by a lot. m
-
-https://www.degruyter.com/document/doi/10.2202/1559-0410.1156/html
-
-Summary: This particular research from the Air Force Institute of Technology used 4 different types of neural networks to predict NBA outcomes, feed-forward neural nets, radial base functions, probabilistic neural nets, and Bayesian belief networks. The researches aimed to predict win outcomes of NBA games. The best functioning neural network was by use of fusion (combining several classifiers together), with a 74.33% accuracy compared to the 68.67% accuracy of betting experts. The database consisted of box scores from the 2007-8 season, including 620 games in the training set. What's promising is that we hope to use many more games and data as input. 
-
-https://ieeexplore.ieee.org/abstract/document/4492661
-
-Summary: These researchers used back-propagation and conjugate-gradient methods on data including (but not limited to) game location, players present, team ranking, performance in previous games, total points scored so far in the season for and against. They actually trained the algorithms on four different sports, including Australian rugby, football, Super Rugby, and English football. Their results, while beggining with low accuracy, improved quickly. Prediction of results in the 2007 Super 14 season reached about 68%, exceeding professional expert prediction. The algorithm was also entered into the "TopTipper" competition in the same year, and ended the season as the best predictor entered. 
-
-### Predicting the outcome of NBA games with Machine Learning - Josh Weiner
-
- In this towardsdatascience.com blog post, a group of undergraduate students at the University of Pennsylvania created a random forest model to predict the outcome of NBA games. With similar experience, resources, and time, we thought this project to be particularly relevant to our endeavors in terms of gauging what we might be able to accomplish. This team scraped their data from BasketballReference.com and engineered five features: 1. ELO rating; 2. Average team stats over past 10 games; 3. Average player stats over past 10 games; 4. Player season performance; 5. Player Efficiency Ratings (PER). Upon analysis of the features, they decided to train the mdoel on ELO ratings and recent average team stats. The model they generated ended up performing with a test accuracy rating of 67.15%, which our group would like to use as a benchmark to surpass.
-
- Link: https://towardsdatascience.com/predicting-the-outcome-of-nba-games-with-machine-learning-a810bb768f20
-
- ### Understanding the Critical Importance of Value in Sports Betting - thesportsgeek.com
-
- This article explains how to decide whether or not you should bet on a given sports game, once you have calculated (or guessed!) a percentage likelihood that a team will win. Using the mathematical concept of implied probability, the article explains how to take gambling odds and convert them into a percentage chance that the bookmaker is assuming a given team has to win. If the percentage likelihood that you have calculated on your own is higher than the bookmaker's implied percentage, then you should place a bet and will theoretically make money. If your odds are lower, you should not place the bet (or you should take the other side of the bet!).
-
- Link: https://www.thesportsgeek.com/sports-betting/strategy/understanding-value/
  
- Other links: 
- https://hughchristensen.com/papers/academic_papers/loeffelholz2009.pdf
- https://www.researchgate.net/publication/312236952_Predicting_the_Outcome_of_NBA_Playoffs_Based_on_the_Maximum_Entropy_Principle
- 
-  ## Dataset(s)
+## Dataset(s)
  
  There are currently two datasets that we are deciding between using for our model.
  
- ### Dataset #1
+### Dataset #1
  
   The first dataset we found that could possibly be used for our model is one that includes NBA data from the regular season and playoff games as well as odds for the past decade. This data has been scraped from various sources on the internet.
   
   Link: https://www.kaggle.com/erichqiu/nba-odds-and-scores?select=2018-19
   
- ### Dataset #2
+### Dataset #2
  
   The second dataset we found that could be used for our model is very similar to the first dataset in the sense that it also includes results from several years of regular season and playoff results from the NBA. It also includes the betting data in various formats, such as money line and spread as well as the betting totals in for the various books in the dataset.
   
   Link: https://www.kaggle.com/ehallmar/nba-historical-stats-and-betting-data?select=nba_betting_totals.csv
+  
+ ### References
+ 
+ https://towardsdatascience.com/building-my-first-machine-learning-model-nba-prediction-algorithm-dee5c5bc4cc1?gi=ab8c91263c91
+ 
+ https://www.cs.dartmouth.edu/~lorenzo/teaching/cs174/Archive/Winter2013/Projects/FinalReportWriteup/michelle.w.shu/
+ 
+ https://www.degruyter.com/document/doi/10.2202/1559-0410.1156/html
+ 
+ https://ieeexplore.ieee.org/abstract/document/4492661
 
+https://towardsdatascience.com/predicting-the-outcome-of-nba-games-with-machine-learning-a810bb768f20
+
+https://www.thesportsgeek.com/sports-betting/strategy/understanding-value/
 
 
