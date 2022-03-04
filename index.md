@@ -31,9 +31,7 @@ https://www.cs.dartmouth.edu/~lorenzo/teaching/cs174/Archive/Winter2013/Projects
 
 Summary: This brings up many interesting ideas. While none of the algorithms used in the paper were neural nets, nonetheless many achieved some level of accuracy that is good (around 57%). What's maybe more alluring about the article is the analysis of long-term gains from investment using the algorithm, which despite its low accuracy compared to other identified algorithms, still purports to achieve higher gains than the S&P by a lot.
 
-https://ieeexplore.ieee.org/abstract/document/4492661
-
-Summary: These researchers used back-propagation and conjugate-gradient methods on data including (but not limited to) game location, players present, team ranking, performance in previous games, total points scored so far in the season for and against. They actually trained the algorithms on four different sports, including Australian rugby, football, Super Rugby, and English football. Their results, while beggining with low accuracy, improved quickly. Prediction of results in the 2007 Super 14 season reached about 68%, exceeding professional expert prediction. The algorithm was also entered into the "TopTipper" competition in the same year, and ended the season as the best predictor entered. 
+Another interesting [paper](https://ieeexplore.ieee.org/abstract/document/4492661) used back-propagation and conjugate-gradient methods on data including (but not limited to) game location, players present, team ranking, performance in previous games, total points scored so far in the season for and against. They actually trained the algorithms on four different sports, including Australian rugby, football, Super Rugby, and English football. Their results, while beggining with low accuracy, improved quickly. Prediction of results in the 2007 Super 14 season reached about 68%, exceeding professional expert prediction. The algorithm was also entered into the "TopTipper" competition in the same year, and ended the season as the best predictor entered. 
 
 ### Understanding the Critical Importance of Value in Sports Betting - thesportsgeek.com
 
