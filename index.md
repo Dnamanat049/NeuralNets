@@ -113,4 +113,17 @@ https://towardsdatascience.com/predicting-the-outcome-of-nba-games-with-machine-
 
 https://www.thesportsgeek.com/sports-betting/strategy/understanding-value/
 
+https://pypi.org/project/beautifulsoup4/
+
+https://pytorch.org/
+
+https://www.selenium.dev/
+
+https://www.kaggle.com/erichqiu/nba-odds-and-scores?select=2013-14
+
+https://www.basketball-reference.com
+
+https://datahub.io/five-thirty-eight/nba-elo
+
+
 
