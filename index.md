@@ -12,12 +12,12 @@ From a top-down view, this is a very difficult task. For one, sports betting com
 
 From a details-oriented view, we will also be facing several challenges. In terms of data, while the gathering process will be fairly straightforward with so many online resources, choosing which statistics and averages to use as inputs will not be so simple. There is potential for noise amongst these troves of data, and so we want to isolate inputs that actually have predictive power. In addition, the values that are important could change from season to season, month to month, or even game to game. Take three pointers, which has become progressively more important to a team's success since they first debuted in 1979 (dramatically so over the past decade). Consider as well injuries, which might make it difficult to rely heavily on individual players' stats given that the makeup of teams has the potential to change from day to day. Apart from data, another challenge we will face is in the form of choosing proper hyperparameters and the right activation function to achieve optimal accuracy. The best past projects have plateaued around the ~75% mark. While this may be the best that is achievable with the data we have due to the randomness of sports, we believe that we can push this upper limit by choosing proper hyperparameters and an activation function that is well-suited for this particular problem. To validate our results, we will set aside a validation set of the data on which to test our model. In the long run, we would ideally like to see how the model performs on games that have yet to been played, given that that is its purpose.
 
-## Assessment Paragraph
+We ultimately would like our model to be able to predict matchups with at least 50% accuracy, and one that is able to pinpoint price mismatches in Vegas odds. Fundamentally, we want our model to be able to generate winnings. We also hope to create an intuitive interface for the application.
 
-- Model that is more than 50% accurate in predicting matchups
-- Can pinpoint price mismatches
-- Can generate winnings
-- Create an inuitive interface for the application.
+## Methods
+For accomplishing this task, we will break down our methods into three categories: our applicable software, our datasets, and our methods of analysis. In terms of software, we will use Beatiful Soup and Selenium to scrape datasets from basketballreference.com. Utilizing these packages will smooth the scraping process, and it is a technique that prior researchers have followed. To construct the neural network, we will be using the robust library PyTorch to enhance our model's learning capabilities. In terms of datasets, we will use the scraped data from basketballreference.com, along with historical betting data from Kaggle.com and historical ELO ratings constructed by fivethirtyeight.com.
+
+In terms of building the actual model, prior research points towards using a feed-forward neural network to achieve the hightest accuracy ratings, and as such that is the model that we have chosen for this task. Our input data will be structured with the observational unit being a single game, with that game being analogous to a vector of floating-point values comprised of the data we have scraped, the betting data, and the team's ELO rating. Our output will be a floating-point number representing a percentage chance of the home team winning a given game. 
 
 ## Related Works
 
