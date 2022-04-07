@@ -28,15 +28,15 @@ PUT RESULTS HERE. QUESTIONS TO CONSIDER:
 
 ## Discussion
 
-- What data you will present:
+What data you will present:
  - Data is presented in the results section
-- Interpretation/evaluation of data
+Interpretation/evaluation of data
  - We should break this down both by accuracy of model and potential for profit. We should consider shortcomings of the model (ex. if a star player gets injured, the model likely won't pick up on that for a few games). We should consider why certain models did better than others (feed-forward is likely the best performer because it is suited for input data with a vector shape). 
-- How does your work compare to others:
+How does your work compare to others:
  - Compare the accuracy of our results to non-machine learning approaches, like expert opinion or betting odds. We should also compare our results to the other papers that we reviewed. We should talk about what we did differently (used different data, different models, incorporated a betting aspect).
-- How to prove your point
+How to prove your point
  - Don't fully understand this one
-- Important concepts learned/implemented
+Important concepts learned/implemented
  - Maybe talk about how we tried to implement several different models, walk through how we did each of them in a tutorial style?
 
 
