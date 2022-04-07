@@ -15,9 +15,30 @@ From a details-oriented view, we will also be facing several challenges. In term
 We ultimately would like our model to be able to predict matchups with at least 50% accuracy, and one that is able to pinpoint price mismatches in Vegas odds. Fundamentally, we want our model to be able to generate winnings. We also hope to create an intuitive interface for the application.
 
 ## Methods
+
 For accomplishing this task, we will break down our methods into three categories: our applicable software, our datasets, and our methods of analysis. In terms of software, we will use Beatiful Soup and Selenium to scrape datasets from basketballreference.com. Utilizing these packages will smooth the scraping process, and it is a technique that prior researchers have followed. To construct the neural network, we will be using the robust library PyTorch to enhance our model's learning capabilities. In terms of datasets, we will use the scraped data from basketballreference.com, along with historical betting data from Kaggle.com and historical ELO ratings constructed by fivethirtyeight.com.
 
 In terms of building the actual model, prior research points towards using a feed-forward neural network to achieve the hightest accuracy ratings, and as such that is the model that we have chosen for this task. Our input data will be structured with the observational unit being a single game, with that game being analogous to a vector of floating-point values comprised of the data we have scraped, the betting data, and the team's ELO rating. Our output will be a floating-point number representing a percentage chance of the home team winning a given game. 
+
+## Results
+
+PUT RESULTS HERE. QUESTIONS TO CONSIDER:
+
+- What was the training accuracy that we achieved? What was the test accuracy that we achieved? We should break this down by different types of neural networks that we tried, and different input data that we used. What were our results with and without our optimization techniques?
+
+## Discussion
+
+- What data you will present:
+ - Data is presented in the results section
+- Interpretation/evaluation of data
+ - We should break this down both by accuracy of model and potential for profit. We should consider shortcomings of the model (ex. if a star player gets injured, the model likely won't pick up on that for a few games). We should consider why certain models did better than others (feed-forward is likely the best performer because it is suited for input data with a vector shape). 
+- How does your work compare to others:
+ - Compare the accuracy of our results to non-machine learning approaches, like expert opinion or betting odds. We should also compare our results to the other papers that we reviewed. We should talk about what we did differently (used different data, different models, incorporated a betting aspect).
+- How to prove your point
+ - Don't fully understand this one
+- Important concepts learned/implemented
+ - Maybe talk about how we tried to implement several different models, walk through how we did each of them in a tutorial style?
+
 
 ## Related Works
 
@@ -25,7 +46,7 @@ In terms of building the actual model, prior research points towards using a fee
  
  In perhaps a more relevant project, a [group of undergraduate students](https://towardsdatascience.com/predicting-the-outcome-of-nba-games-with-machine-learning-a810bb768f20) at the University of Pennsylvania created a random forest model to predict the outcome of NBA games. With similar experience, resources, and time, we thought this project to be particularly relevant to our endeavors in terms of gauging what we might be able to accomplish. This team scraped their data from BasketballReference.com and engineered five features: 1. ELO rating; 2. Average team stats over past 10 games; 3. Average player stats over past 10 games; 4. Player season performance; 5. Player Efficiency Ratings (PER). Upon analysis of the features, they decided to train the model on ELO ratings and recent average team stats. The model they generated ended up performing with a test accuracy rating of 67.15%, which our group would like to use as a benchmark to surpass.
  
-In a similar [project](https://towardsdatascience.com/building-my-first-machine-learning-model-nba-prediction-algorithm-dee5c5bc4cc1), an independent data scientist created a sports analysis betting algorithm, which he later tranformed into a service allowing subscription-based access to the NBA prediction API's he created. This model serves as an interesting contrast to the use of neural nets, as Fayad (the creator of the model) used an entirely different method, namely a support vector machine, for predicitons. The relevant aspect to our project was namely the process of collecting data, which is of course integral to any succesful model. Fayad used data web-scraped using the package Selenium from the website [basketball-reference.com](basketball-reference.com). The model ended up with a 72% accuracy. 
+In a similar [project](https://towardsdatascience.com/building-my-first-machine-learning-model-nba-prediction-algorithm-dee5c5bc4cc1), an independent data scientist created a sports analysis betting algorithm, which he later tranformed into a service allowing subscription-based access to the NBA prediction API's he created. This model serves as an interesting contrast to the use of neural nets, as Fayad (the creator of the model) used an entirely different method, namely a support vector machine, for predictions. The relevant aspect to our project was namely the process of collecting data, which is of course integral to any succesful model. Fayad used data web-scraped using the package Selenium from the website [basketball-reference.com](basketball-reference.com). The model ended up with a 72% accuracy. 
 
 Another interesting [paper](https://ieeexplore.ieee.org/abstract/document/4492661) used back-propagation and conjugate-gradient methods on data including (but not limited to) game location, players present, team ranking, performance in previous games, total points scored so far in the season for and against. They actually trained the algorithms on four different sports, including Australian rugby, football, Super Rugby, and English football. Their results, while beggining with low accuracy, improved quickly. Prediction of results in the 2007 Super 14 season reached about 68%, exceeding professional expert prediction. The algorithm was also entered into the "TopTipper" competition in the same year, and ended the season as the best predictor entered. 
 
