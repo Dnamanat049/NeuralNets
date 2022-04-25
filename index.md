@@ -18,32 +18,35 @@ We ultimately would like our model to be able to predict matchups with at least 
 
 For accomplishing this task, we will break down our methods into three categories: our applicable software, our datasets, and our methods of analysis. In terms of software, we will use Beatiful Soup and Selenium to scrape datasets from basketballreference.com. Utilizing these packages will smooth the scraping process, and it is a technique that prior researchers have followed. To construct the neural network, we will be using the robust library PyTorch to enhance our model's learning capabilities. In terms of datasets, we will use the scraped data from basketballreference.com, along with historical betting data from Kaggle.com and historical ELO ratings constructed by fivethirtyeight.com.
 
-In terms of building the actual model, prior research points towards using a feed-forward neural network to achieve the hightest accuracy ratings, and as such that is the model that we have chosen for this task. Our input data will be structured with the observational unit being a single game, with that game being analogous to a vector of floating-point values comprised of the data we have scraped, the betting data, and the team's ELO rating. Our output will be a floating-point number representing a percentage chance of the home team winning a given game.
-
-REVISED:
-
-For accomplishing this task, we will break down our methods into three categories: our applicable software, our datasets, and our methods of analysis. In terms of software, we will use Beatiful Soup and Selenium to scrape datasets from basketballreference.com. Utilizing these packages will smooth the scraping process, and it is a technique that prior researchers have followed. To construct the neural network, we will be using the robust library PyTorch to enhance our model's learning capabilities. In terms of datasets, we will use the scraped data from basketballreference.com, along with historical betting data from Kaggle.com and historical ELO ratings constructed by fivethirtyeight.com.
-
 In terms of building the actual model, prior research points towards using a feed-forward neural network to achieve the hightest accuracy ratings, and as such that is the model that we have chosen for this task. Our input data will be structured with the observational unit being a single game, with that game being analogous to a vector of floating-point values comprised of the data we have scraped, the betting data, and the team's ELO rating. The data that we have trained the model on is comprised of betting odds from various websites for regular season NBA games from 2012 through 2018. In total there are roughly 13,000 games that are in the training data alone. In order to predict if it is worth it to place a bet on a game, we decided that the best prediction to make would be for one of the betting websites and comopare what our prediction is to what the original odds they placed on the game were. The variable we ended up attempting to predict with our model was Bovada_ML, or the money line odds set by bovada.lv. Because it would be difficult to get our predictions to be exactly correct each time, we set a range so that if our prediction was within 10 of the desired value (in either direction), it would be deemed as correctly set by the oddsmakers. However, if the prediction and the desired output did not line up, then we know the line was incorrectly set by the oddsmakers and therefore is a bet that should be taken advantage of by bettors. With this in mind, we determined that the best format for the output of our model would be a yes/no indication of whether or not the bet is a good one to make, as well as the desired and predicted values.
 
 ## Results
 
-PUT RESULTS HERE. QUESTIONS TO CONSIDER:
+In our first model, we trained our data for 200 epochs, used 2 hidden layers, a Tanh activation function, SGD optimizer, and had an adaptive learning rate so as to soften feedback as the loss converges. We were able to achieve an analog prediction error, or loss, of 2.477.
 
-- What was the training accuracy that we achieved? What was the test accuracy that we achieved? We should break this down by different types of neural networks that we tried, and different input data that we used. What were our results with and without our optimization techniques?
+When we ran our model on our testing data, we adjusted the comparison between the desired and prediction value to not check if they are exactly the same, but to see if the difference between the prediction and desired value were within 10 of each other. If they ended up being within this range, this prediction was classified as a correct prediction.
+
+The results from this first model yielded 61.26% accuracy, which was higher than the initial threshold we set for our model.
+
+In the next trial, we made some slight adjustments to the specifications of our model. Instead of using the SGD optimizer, we use the Adam optimizer. All of the other specifications of the model are kept the same. Our loss converges to 2.879, which is not much higher than our first model. However, we see that this is much less accurate than the first model because this model achieves an overall predictive accuracy of 35.54%.
+
+In our third model, we adjust the specifications of the model to have the ReLU activation function and the SGD optimizer. This yields the best results so far, as the loss comes in at 1.755 and the prediction accuracy is a robust 76.98%, which is much higher than both of the other variations of this model before.
+
+In the fourth variation of the model that we tested, we used the ReLU activation function and the Adam optimizer. We were able to achieve a loss of 2.469, but our prediction accuracy was approximately 59.7%, which is not quite as good as some other variations of the model.
+
+Overall, the third model definitely performed the best of ones that we tried. The ReLU and SGD optimizers seem to be the best two options for activation function and optimizer when running the model with the settings that we ran it with.
 
 ## Discussion
 
-What data you will present:
- - Data is presented in the results section
-Interpretation/evaluation of data
- - We should break this down both by accuracy of model and potential for profit. We should consider shortcomings of the model (ex. if a star player gets injured, the model likely won't pick up on that for a few games). We should consider why certain models did better than others (feed-forward is likely the best performer because it is suited for input data with a vector shape). 
-How does your work compare to others:
- - Compare the accuracy of our results to non-machine learning approaches, like expert opinion or betting odds. We should also compare our results to the other papers that we reviewed. We should talk about what we did differently (used different data, different models, incorporated a betting aspect).
-How to prove your point
- - Don't fully understand this one
-Important concepts learned/implemented
- - Maybe talk about how we tried to implement several different models, walk through how we did each of them in a tutorial style?
+The main purpose of this project was to see if we could build a model that would give bettors any sort of advantage over bookies when placing bets on NBA games based off of historical betting data from previous NBA games. We succeeded in creating a model that is able to make predictions based on this data by predicting the Bovada ML for a game based on betting lines set by other websites, meaning there is potential for profit if this model is utilized appropriately. However, there are some shortcomings to the model we have created.
+
+First off, our model is only taking into account data from NBA seasons between 2012 and 2018. Despite there being thousands of games worth of data that our model has been trained on from these years, performances of teams from year to year vary greatly in a sport like basketball. Realistically, previous years of data may not have the most significant impact on the current year’s betting odds or predictions for games, but to include them in the data can be valuable because trends can be spotted in how lines are being set by oddsmakers.
+
+Additionally, the only prediction that our model is making is on the money line odds for a game. On one hand, this provides good inside into the accuracy of the oddsmakers because our program can make a prediction about the Bovada money line and compare it to the desired value. However, with there being several different ways to bet on a game, such as the spread, over/under, teasers, and several others. Since we are only predicting the money line, it is not going to be very useful for individuals placing bets on other types of lines that are set by odds makers.
+
+In comparison to related works that attempted to create similar programs, our model performed about the same. At our model’s best, we were able to achieve approximately 76% accuracy for predictions, but that was within a range that our prediction fell according to what the desired output was supposed to be. It seems that it is difficult to outperform the oddsmakers at an extremely high rate because despite there being trends in basketball, there are still factors that are unpredictable when attempting to create a model such as we have.
+
+As our results suggest, the ReLU activation function seems to outperform Tanh in almost all scenarios. The advantages of the ReLU function when compared to the Tanh function lie in the fact that there are no negative values available when using ReLu due to them being converted to 0’s if they happen to be negative, the maximum threshold values are infinity allowing the output prediction accuracy to be its absolute maximum value, and the overall speed is quicker than other activation functions. Overall, the ReLU function is a better activation function to use in terms of our model, and such is proven in our results.
 
 
 ## Related Works
