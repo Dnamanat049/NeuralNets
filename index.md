@@ -34,7 +34,7 @@ In our third model, we adjust the specifications of the model to have the ReLU a
 
 Here is a plot that shows the loss per iteration of our most successful classifier:
 
-![loss_plot](https://user-images.githubusercontent.com/60167964/165652422-d120aff1-1b0e-4de5-a0fb-1a1331fce8cf.png)
+![final_loss_plot](https://user-images.githubusercontent.com/60167964/165652609-def8b4b3-165c-4a9a-93ee-b4a697474908.png)
 
 In the fourth variation of the model that we tested, we used the ReLU activation function and the Adam optimizer. We were able to achieve a loss of 2.469, but our prediction accuracy was approximately 59.7%, which is not quite as good as some other variations of the model.
 
