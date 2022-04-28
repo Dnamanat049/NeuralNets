@@ -32,6 +32,10 @@ In the next trial, we made some slight adjustments to the specifications of our 
 
 In our third model, we adjust the specifications of the model to have the ReLU activation function and the SGD optimizer. This yields the best results so far, as the loss comes in at 1.755 and the prediction accuracy is a robust 76.98%, which is much higher than both of the other variations of this model before.
 
+Here is a plot that shows the loss per iteration of our most successful classifier:
+
+![loss_plot](https://user-images.githubusercontent.com/60167964/165652422-d120aff1-1b0e-4de5-a0fb-1a1331fce8cf.png)
+
 In the fourth variation of the model that we tested, we used the ReLU activation function and the Adam optimizer. We were able to achieve a loss of 2.469, but our prediction accuracy was approximately 59.7%, which is not quite as good as some other variations of the model.
 
 Overall, the third model definitely performed the best of ones that we tried. The ReLU and SGD optimizers seem to be the best two options for activation function and optimizer when running the model with the settings that we ran it with.
