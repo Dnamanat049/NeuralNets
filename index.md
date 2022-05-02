@@ -40,7 +40,11 @@ When we ran our model on our testing data, which was seperate from the data we t
 
 The results from this first model yielded 61.26% accuracy, which was higher than the initial threshold of 50% we set for our model. The reason the inital threshold was set at this level was that we wanted our model to perform better than simply flipping a coin to choose the winner of a game based on pervious data. We figured that acheiving anything greater than a predictive accuracy of 50% would be a success in terms of our goals for this project.
 
-In the next trial, we made some slight adjustments to the specifications of our model. Instead of using the SGD optimizer, we use the Adam optimizer. All of the other specifications of the model are kept the same. Our loss converges to 2.879, which is not much higher than our first model. However, we see that this is much less accurate than the first model because this model achieves an overall predictive accuracy of 35.54%.
+![tanh+sgd](https://user-images.githubusercontent.com/60167964/166334510-686f3e4a-07cb-48e0-9133-737a216de423.png)
+
+In the next trial, we made some slight adjustments to the specifications of our model. Instead of using the SGD optimizer, we use the Adam optimizer. All of the other specifications of the model are kept the same. Our loss converges to 2.879, which is not much higher than our first model. We also reduced the maximum number of training iterations to 70 because the value for loss was converging after this amount of repetitions. However, we see that this is much less accurate than the first model because this model achieves an overall predictive accuracy of 35.54%.
+
+![adam+tanh](https://user-images.githubusercontent.com/60167964/166334546-6f506d24-93fa-442e-8445-75bbe1fa1536.png)
 
 In our third model, we adjust the specifications of the model to have the ReLU activation function and the SGD optimizer. This yields the best results so far, as the loss comes in at 1.755 and the prediction accuracy is a robust 76.98%, which is much higher than both of the other variations of this model before.
 
@@ -48,7 +52,10 @@ Here is a plot that shows the loss per iteration of our most successful classifi
 
 ![final_loss_plot](https://user-images.githubusercontent.com/60167964/165652609-def8b4b3-165c-4a9a-93ee-b4a697474908.png)
 
-In the fourth variation of the model that we tested, we used the ReLU activation function and the Adam optimizer. We were able to achieve a loss of 2.469, but our prediction accuracy was approximately 59.7%, which is not quite as good as some other variations of the model.
+In the fourth variation of the model that we tested, we used the ReLU activation function and the Adam optimizer. We were able to achieve a loss of 2.469, but our prediction accuracy was approximately 59.7%, which is not quite as good as some other variations of the model. In this model, we had to reduce the number of iterations that we trained our model for to 60 because the optimization was converging after this amount of time.
+
+![adam+relu](https://user-images.githubusercontent.com/60167964/166334591-cd79d38f-fa99-418c-91b9-efe9b5636701.png)
+
 
 Overall, the third model definitely performed the best of ones that we tried. The ReLU and SGD optimizers seem to be the best two options for activation function and optimizer when running the model with the settings that we ran it with. We did not try adding any dropout or batch normalization laters, but this could be done in the future to optimize our model even further for heightened performance.
 
