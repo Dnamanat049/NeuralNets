@@ -18,7 +18,7 @@ We ultimately would like our model to be able to predict matchups with at least 
 
 For accomplishing this task, we will break down our methods into three categories: our applicable software, our datasets, and our methods of analysis. In terms of software, we will use Beatiful Soup and Selenium to scrape datasets from basketballreference.com. Utilizing these packages will smooth the scraping process, and it is a technique that prior researchers have followed. To construct the neural network, we will be using the robust library PyTorch to enhance our model's learning capabilities. In terms of datasets, we will use the scraped data from basketballreference.com, along with historical betting data from Kaggle.com and historical ELO ratings constructed by fivethirtyeight.com.
 
-In terms of building the actual model, prior research points towards using a feed-forward neural network to achieve the hightest accuracy ratings, and as such that is the model that we have chosen for this task. Our input data will be structured with the observational unit being a single game, with that game being analogous to a vector of floating-point values comprised of the data we have scraped, the betting data, and the team's ELO rating. The data that we have trained the model on is comprised of betting odds from various websites for regular season NBA games from 2012 through 2018. In total there are roughly 13,000 games that are in the training data alone. In order to predict if it is worth it to place a bet on a game, we decided that the best prediction to make would be for one of the betting websites and comopare what our prediction is to what the original odds they placed on the game were. The variable we ended up attempting to predict with our model was Bovada_ML, or the money line odds set by bovada.lv. Because it would be difficult to get our predictions to be exactly correct each time, we set a range so that if our prediction was within 10 of the desired value (in either direction), it would be deemed as correctly set by the oddsmakers. However, if the prediction and the desired output did not line up, then we know the line was incorrectly set by the oddsmakers and therefore is a bet that should be taken advantage of by bettors. With this in mind, we determined that the best format for the output of our model would be a yes/no indication of whether or not the bet is a good one to make, as well as the desired and predicted values.
+In terms of building the actual model, prior research points towards using a feed-forward neural network to achieve the hightest accuracy ratings, and as such that is the model that we have chosen for this task. Our input data will be structured with the observational unit being a single game, with that game being analogous to a vector of floating-point values comprised of the data we have scraped, the betting data, and the team's ELO rating. The data that we have trained the model on is comprised of betting odds from various websites for regular season NBA games from 2012 through 2018. In total there are roughly 13,000 games that are in the training data alone. In order to predict if it is worth it to place a bet on a game, we decided that the best prediction to make would be for one of the betting websites and compare what our prediction is to what the original odds they placed on the game were. The variable we ended up attempting to predict with our model was Bovada_ML, or the money line odds set by bovada.lv. Because it would be difficult to get our predictions to be exactly correct each time, we set a range so that if our prediction was within 10 of the desired value (in either direction), it would be deemed as correctly set by the oddsmakers. However, if the prediction and the desired output did not line up, then we know the line was incorrectly set by the oddsmakers and therefore is a bet that should be taken advantage of by bettors. For example, if the line was set at -300 for one team to win and our model predicted anything from -290 to -310, it would be considered a correctly set line. If our model predicts a value outside of this range though, we would notify the user that this line has not been set properly and is therefore a bet that should be taken to exploit an error made by the oddsmakers. With this in mind, we determined that the best format for the output of our model would be a yes/no indication of whether or not the bet is a good one to make, as well as the desired and predicted values.
 
 ## Results
 
@@ -26,7 +26,7 @@ In our first model, we trained our data for 200 epochs, used 2 hidden layers, a 
 
 When we ran our model on our testing data, we adjusted the comparison between the desired and prediction value to not check if they are exactly the same, but to see if the difference between the prediction and desired value were within 10 of each other. If they ended up being within this range, this prediction was classified as a correct prediction.
 
-The results from this first model yielded 61.26% accuracy, which was higher than the initial threshold we set for our model.
+The results from this first model yielded 61.26% accuracy, which was higher than the initial threshold of 50% we set for our model. The reason the inital threshold was set at this level was that we wanted our model to perform better than simply flipping a coin to choose the winner of a game based on pervious data. We figured that acheiving anything greater than a predictive accuracy of 50% would be a success in terms of our goals for this project.
 
 In the next trial, we made some slight adjustments to the specifications of our model. Instead of using the SGD optimizer, we use the Adam optimizer. All of the other specifications of the model are kept the same. Our loss converges to 2.879, which is not much higher than our first model. However, we see that this is much less accurate than the first model because this model achieves an overall predictive accuracy of 35.54%.
 
@@ -38,11 +38,25 @@ Here is a plot that shows the loss per iteration of our most successful classifi
 
 In the fourth variation of the model that we tested, we used the ReLU activation function and the Adam optimizer. We were able to achieve a loss of 2.469, but our prediction accuracy was approximately 59.7%, which is not quite as good as some other variations of the model.
 
-Overall, the third model definitely performed the best of ones that we tried. The ReLU and SGD optimizers seem to be the best two options for activation function and optimizer when running the model with the settings that we ran it with.
+Overall, the third model definitely performed the best of ones that we tried. The ReLU and SGD optimizers seem to be the best two options for activation function and optimizer when running the model with the settings that we ran it with. We did not try adding any dropout or batch normalization laters, but this could be done in the future to optimize our model even further for heightened performance.
 
 ## Discussion
 
-The main purpose of this project was to see if we could build a model that would give bettors any sort of advantage over bookies when placing bets on NBA games based off of historical betting data from previous NBA games. We succeeded in creating a model that is able to make predictions based on this data by predicting the Bovada ML for a game based on betting lines set by other websites, meaning there is potential for profit if this model is utilized appropriately. However, there are some shortcomings to the model we have created.
+The main purpose of this project was to see if we could build a model that would give bettors any sort of advantage over bookies when placing bets on NBA games based off of historical betting data from previous NBA games. We succeeded in creating a model that is able to make predictions based on this data by predicting the Bovada ML for a game based on betting lines set by other websites, meaning there is potential for profit if this model is utilized appropriately. There are currently two datasets that we are deciding between using for our model.
+ 
+### Dataset #1
+ 
+  The first dataset we found that could possibly be used for our model is one that includes NBA data from the regular season and playoff games as well as odds for the past decade. This data has been scraped from various sources on the internet.
+  
+  Link: [https://www.kaggle.com/erichqiu/nba-odds-and-scores?select=2018-19](https://www.kaggle.com/erichqiu/nba-odds-and-scores?select=2018-19)
+  
+### Dataset #2
+ 
+  The second dataset we found that could be used for our model is very similar to the first dataset in the sense that it also includes results from several years of regular season and playoff results from the NBA. It also includes the betting data in various formats, such as money line and spread as well as the betting totals in for the various books in the dataset.
+  
+  Link: [https://www.kaggle.com/ehallmar/nba-historical-stats-and-betting-data?select=nba_betting_totals.csv](https://www.kaggle.com/ehallmar/nba-historical-stats-and-betting-data?select=nba_betting_totals.csv)
+
+However, there are some shortcomings to the model we have created.
 
 First off, our model is only taking into account data from NBA seasons between 2012 and 2018. Despite there being thousands of games worth of data that our model has been trained on from these years, performances of teams from year to year vary greatly in a sport like basketball. Realistically, previous years of data may not have the most significant impact on the current year’s betting odds or predictions for games, but to include them in the data can be valuable because trends can be spotted in how lines are being set by oddsmakers.
 
@@ -50,7 +64,7 @@ Additionally, the only prediction that our model is making is on the money line 
 
 In comparison to related works that attempted to create similar programs, our model performed about the same. At our model’s best, we were able to achieve approximately 76% accuracy for predictions, but that was within a range that our prediction fell according to what the desired output was supposed to be. It seems that it is difficult to outperform the oddsmakers at an extremely high rate because despite there being trends in basketball, there are still factors that are unpredictable when attempting to create a model such as we have.
 
-As our results suggest, the ReLU activation function seems to outperform Tanh in almost all scenarios. The advantages of the ReLU function when compared to the Tanh function lie in the fact that there are no negative values available when using ReLu due to them being converted to 0’s if they happen to be negative, the maximum threshold values are infinity allowing the output prediction accuracy to be its absolute maximum value, and the overall speed is quicker than other activation functions. Overall, the ReLU function is a better activation function to use in terms of our model, and such is proven in our results.
+As our results suggest, the ReLU activation function seems to outperform Tanh in almost all scenarios. The advantages of the ReLU function when compared to the Tanh function lie in the fact that there are no negative values available when using ReLU due to them being converted to 0’s if they happen to be negative, the maximum threshold values are infinity allowing the output prediction accuracy to be its absolute maximum value, and the overall speed is quicker than other activation functions. Overall, the ReLU function is a better activation function to use in terms of our model, and such is proven in our results.
 
 
 ## Reflection
@@ -121,50 +135,33 @@ A possible misinterpretation of the results may be that our generated accuracy p
 
 ### How might we impinge individuals' privacy and/or anonymity?
 
-We do not forsee this impinging individuals' privacy or anonymity. Since it will use information provided publicly, which team members consent to, it will not utilize information not previously consented to. 
-
- 
-## Dataset(s)
- 
- There are currently two datasets that we are deciding between using for our model.
- 
-### Dataset #1
- 
-  The first dataset we found that could possibly be used for our model is one that includes NBA data from the regular season and playoff games as well as odds for the past decade. This data has been scraped from various sources on the internet.
+We do not forsee this impinging individuals' privacy or anonymity. Since it will use information provided publicly, which team members consent to, it will not utilize information not previously consented to.
   
-  Link: https://www.kaggle.com/erichqiu/nba-odds-and-scores?select=2018-19
-  
-### Dataset #2
+ ## References
  
-  The second dataset we found that could be used for our model is very similar to the first dataset in the sense that it also includes results from several years of regular season and playoff results from the NBA. It also includes the betting data in various formats, such as money line and spread as well as the betting totals in for the various books in the dataset.
-  
-  Link: https://www.kaggle.com/ehallmar/nba-historical-stats-and-betting-data?select=nba_betting_totals.csv
-  
- ### References
+[https://towardsdatascience.com/building-my-first-machine-learning-model-nba-prediction-algorithm-dee5c5bc4cc1?gi=ab8c91263c91](https://towardsdatascience.com/building-my-first-machine-learning-model-nba-prediction-algorithm-dee5c5bc4cc1?gi=ab8c91263c91)
  
- https://towardsdatascience.com/building-my-first-machine-learning-model-nba-prediction-algorithm-dee5c5bc4cc1?gi=ab8c91263c91
+ [https://www.cs.dartmouth.edu/~lorenzo/teaching/cs174/Archive/Winter2013/Projects/FinalReportWriteup/michelle.w.shu/](https://www.cs.dartmouth.edu/~lorenzo/teaching/cs174/Archive/Winter2013/Projects/FinalReportWriteup/michelle.w.shu/)
  
- https://www.cs.dartmouth.edu/~lorenzo/teaching/cs174/Archive/Winter2013/Projects/FinalReportWriteup/michelle.w.shu/
+ [https://www.degruyter.com/document/doi/10.2202/1559-0410.1156/html](https://www.degruyter.com/document/doi/10.2202/1559-0410.1156/html)
  
- https://www.degruyter.com/document/doi/10.2202/1559-0410.1156/html
- 
- https://ieeexplore.ieee.org/abstract/document/4492661
+ [https://ieeexplore.ieee.org/abstract/document/4492661](https://ieeexplore.ieee.org/abstract/document/4492661)
 
-https://towardsdatascience.com/predicting-the-outcome-of-nba-games-with-machine-learning-a810bb768f20
+[https://towardsdatascience.com/predicting-the-outcome-of-nba-games-with-machine-learning-a810bb768f20](https://towardsdatascience.com/predicting-the-outcome-of-nba-games-with-machine-learning-a810bb768f20)
 
-https://www.thesportsgeek.com/sports-betting/strategy/understanding-value/
+[https://www.thesportsgeek.com/sports-betting/strategy/understanding-value/](https://www.thesportsgeek.com/sports-betting/strategy/understanding-value/)
 
-https://pypi.org/project/beautifulsoup4/
+[https://pypi.org/project/beautifulsoup4/](https://pypi.org/project/beautifulsoup4/)
 
-https://pytorch.org/
+[https://pytorch.org/](https://pytorch.org/)
 
-https://www.selenium.dev/
+[https://www.selenium.dev/](https://www.selenium.dev/)
 
-https://www.kaggle.com/erichqiu/nba-odds-and-scores?select=2013-14
+[https://www.kaggle.com/erichqiu/nba-odds-and-scores?select=2013-14](https://www.kaggle.com/erichqiu/nba-odds-and-scores?select=2013-14)
 
-https://www.basketball-reference.com
+[https://www.basketball-reference.com](https://www.basketball-reference.com)
 
-https://datahub.io/five-thirty-eight/nba-elo
+[https://datahub.io/five-thirty-eight/nba-elo](https://datahub.io/five-thirty-eight/nba-elo)
 
 
 
