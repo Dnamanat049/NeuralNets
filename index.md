@@ -61,17 +61,11 @@ Overall, the third model definitely performed the best of ones that we tried. Th
 
 ## Discussion
 
-The main purpose of this project was to see if we could build a model that would give bettors any sort of advantage over bookies when placing bets on NBA games based off of historical betting data from previous NBA games. We succeeded in creating a model that is able to make predictions based on this data by predicting the Bovada ML for a game based on betting lines set by other websites, meaning there is potential for profit if this model is utilized appropriately. There are currently two datasets that we are deciding between using for our model.
+The main purpose of this project was to see if we could build a model that would give bettors any sort of advantage over bookies when placing bets on NBA games based off of historical betting data from previous NBA games. We succeeded in creating a model that is able to make predictions based on this data by predicting the Bovada ML for a game based on betting lines set by other websites, meaning there is potential for profit if this model is utilized appropriately.
+
+### Dataset
  
-### Dataset #1
- 
-  The first dataset we found that could possibly be used for our model is one that includes NBA data from the regular season and playoff games as well as odds for the past decade. This data has been scraped from various sources on the internet.
-  
-  Link: [https://www.kaggle.com/erichqiu/nba-odds-and-scores?select=2018-19](https://www.kaggle.com/erichqiu/nba-odds-and-scores?select=2018-19)
-  
-### Dataset #2
- 
-  The second dataset we found that could be used for our model is very similar to the first dataset in the sense that it also includes results from several years of regular season and playoff results from the NBA. It also includes the betting data in various formats, such as money line and spread as well as the betting totals in for the various books in the dataset.
+  The dataset we used for our model includes results from several years of regular season and playoff results from the NBA. It also includes the betting data in various formats, such as money line and spread as well as the betting totals in for the various books in the dataset.
   
   Link: [https://www.kaggle.com/ehallmar/nba-historical-stats-and-betting-data?select=nba_betting_totals.csv](https://www.kaggle.com/ehallmar/nba-historical-stats-and-betting-data?select=nba_betting_totals.csv)
 
