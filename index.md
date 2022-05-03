@@ -1,5 +1,9 @@
 # NBAI Project
 
+## Abstract
+
+A variety of machine leaarning models have been used to predict the results of sporting events. Feed forward neural nets are an interesting and promising method for high-accuracy prediction. Statistics from 13,000 regular season NBA games from 2012 through 2018 was scraped from [basketballreference.com](basketballreference.com) as well as betting data from kaggle and historical ELO ratings from fivethirtyeight. A feed-forward neural network that predicted the Bovada bettings odds was constructed using PyTorch. The purpose of predicitng this metric was to allow users to harness differences in bettings odds from betting organizations and odds from this model. After several iterations, a model was constructed using a ReLU activation function and SGD optimizer, reaching 76.98% accuracy. This surpassed the accuracy of models constructed using an Adam optimizer and Tanh acivation function. 
+
 ## INTRODUCTION
 
 "$10 the Knicks lose." Watching an NBA game with others, questions like this about small-scale betting frequently appear as a means of making the event more entertaining for the group. Even if you are not particularly disposed to either of the teams, it is easy to pick one and become enamored with the game to the point where you are genuinely sad or upset if "your" team loses. While not always safe or ethical, it certainly draws you into the event in a way that few other sports-adjacent activites can. Taken on a larger scale, this small-scale betting has become a phenonemon with companies like DraftKings and FanDuel that enable this behavior on a countrywide scale becoming worth billions of dollars. Given how popular this subculture has become, our team believes it would be a fun challenge to create a model that is able to win at this "game."
