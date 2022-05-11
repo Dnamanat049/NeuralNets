@@ -34,6 +34,12 @@ One final [article](https://www.thesportsgeek.com/sports-betting/strategy/unders
 
 For accomplishing this task, we will break down our methods into three categories: our applicable software, our datasets, and our methods of analysis. In terms of software, we will use [Beautiful Soup](https://beautiful-soup-4.readthedocs.io/en/latest/) and [Selenium](https://www.selenium.dev) to scrape datasets from basketballreference.com. Utilizing these packages will smooth the scraping process, and it is a technique that prior researchers have followed. To construct the neural network, we will be using the robust library [PyTorch](https://pytorch.org) to thoroughly train our model and enhance its predictive capabilities. In terms of datasets, we will use the scraped data from basketballreference.com, along with historical betting data from [kaggle](https://www.kaggle.com) and historical ELO ratings constructed by [fivethirtyeight.com](fivethirtyeight.com).
 
+### Dataset
+ 
+  The dataset we used for our model includes results from several years of regular season and playoff results from the NBA. It also includes the betting data in various formats, such as money line and spread as well as the betting totals in for the various books in the dataset.
+  
+  Link: [https://www.kaggle.com/ehallmar/nba-historical-stats-and-betting-data?select=nba_betting_totals.csv](https://www.kaggle.com/ehallmar/nba-historical-stats-and-betting-data?select=nba_betting_totals.csv)
+
 In terms of building the actual model, prior research points towards using a feed-forward neural network to achieve the hightest accuracy ratings, and as such that is the model that we have chosen for this task. A feed-forward neural network is one in which there are several layers consisting of nodes where the information only moves forward through the network from input nodes to the output nodes with no cycles present throughout the network. We chose to use this type of model because of its ability to process non-linear, tabular data and create approximation functions for predicting values based on historical data. Our input data will be structured with the observational unit being a single game, with that game being analogous to a vector of floating-point values consisting of the data we have scraped, the betting data, and the team's ELO rating. The data that we have trained the model on comprises betting odds from various websites for regular season NBA games from 2012 through 2018. In total there are roughly 13,000 games that are in the training data alone. In order to predict if it is worth it to place a bet on a game, we decided that the best prediction to make would be for one of the betting websites and compare what our prediction is to what the original odds they placed on the game were. The variable we ended up attempting to predict with our model was Bovada_ML, or the money line odds set by bovada.lv. Because it would be difficult to get our predictions to be exactly correct each time, we set a range so that if our prediction was within 10 of the desired value (in either direction), it would be deemed as correctly set by the oddsmakers. However, if the prediction and the desired output did not line up, then we know the line was incorrectly set by the oddsmakers and therefore is a bet that should be taken advantage of by bettors. For example, if the line was set at -300 for one team to win and our model predicted anything from -290 to -310, it would be considered a correctly set line. If our model predicts a value outside of this range though, we would notify the user that this line has not been set properly and is therefore a bet that should be taken to exploit an error made by the oddsmakers. With this in mind, we determined that the best format for the output of our model would be a yes/no indication of whether or not the bet is a good one to make, as well as the desired and predicted values.
 
 ## Results
@@ -42,7 +48,7 @@ In our first model, we trained our model for 200 epochs, used 2 hidden layers wi
 
 When we ran our model on our testing data, which was seperate from the data we trained the model with, we adjusted the comparison between the desired and prediction value to not check if they are exactly the same, but to see if the difference between the prediction and desired value were within 10 of each other. If they ended up being within this range, this prediction was classified as a correct prediction.
 
-The results from this first model yielded 61.26% accuracy, which was higher than the initial threshold of 50% we set for our model. The reason the inital threshold was set at this level was that we wanted our model to perform better than simply flipping a coin to choose the winner of a game based on pervious data. We figured that acheiving anything greater than a predictive accuracy of 50% would be a success in terms of our goals for this project.
+The results from this first model yielded 61.26% accuracy, which was higher than the initial threshold of 50% we set for our model. The reason the inital threshold was set at this level was that we wanted our model to perform better than simply flipping a coin to choose the winner of a game based on pervious data.
 
 ![tanh+sgd](https://user-images.githubusercontent.com/60167964/166334510-686f3e4a-07cb-48e0-9133-737a216de423.png)
 
@@ -51,8 +57,6 @@ In the next trial, we made some slight adjustments to the specifications of our 
 ![adam+tanh](https://user-images.githubusercontent.com/60167964/166334546-6f506d24-93fa-442e-8445-75bbe1fa1536.png)
 
 In our third model, we adjust the specifications of the model to have the ReLU activation function and the SGD optimizer. This yields the best results so far, as the loss comes in at 1.755 and the prediction accuracy is a robust 76.98%, which is much higher than both of the other variations of this model before.
-
-Here is a plot that shows the loss per iteration of our most successful classifier:
 
 ![final_loss_plot](https://user-images.githubusercontent.com/60167964/165652609-def8b4b3-165c-4a9a-93ee-b4a697474908.png)
 
@@ -66,12 +70,6 @@ Overall, the third model definitely performed the best of ones that we tried. Th
 ## Discussion
 
 The main purpose of this project was to see if we could build a model that would give bettors any sort of advantage over bookies when placing bets on NBA games based off of historical betting data from previous NBA games. We succeeded in creating a model that is able to make predictions based on this data by predicting the Bovada ML for a game based on betting lines set by other websites, meaning there is potential for profit if this model is utilized appropriately.
-
-### Dataset
- 
-  The dataset we used for our model includes results from several years of regular season and playoff results from the NBA. It also includes the betting data in various formats, such as money line and spread as well as the betting totals in for the various books in the dataset.
-  
-  Link: [https://www.kaggle.com/ehallmar/nba-historical-stats-and-betting-data?select=nba_betting_totals.csv](https://www.kaggle.com/ehallmar/nba-historical-stats-and-betting-data?select=nba_betting_totals.csv)
 
 However, there are some shortcomings to the model we have created.
 
